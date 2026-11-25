@@ -1,0 +1,58 @@
+{
+  "name": "kbeauty-store",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=4096\" next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "eslint",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create",
+    "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/index.ts",
+    "stripe-webhooks": "stripe listen --forward-to localhost:3000/api/payments/stripe/webhooks",
+    "db:start": "node scripts/db.mjs start",
+    "db:stop": "node scripts/db.mjs stop",
+    "db:status": "node scripts/db.mjs status",
+    "db:init": "node scripts/db.mjs init",
+    "db:restore": "node scripts/db.mjs restore",
+    "share": "node scripts/share.mjs",
+    "import:products": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/real-products.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.93.0",
+    "@payloadcms/email-nodemailer": "3.93.0",
+    "@payloadcms/next": "3.93.0",
+    "@payloadcms/plugin-cloud-storage": "3.93.0",
+    "@payloadcms/plugin-ecommerce": "3.93.0",
+    "@payloadcms/richtext-lexical": "3.93.0",
+    "@payloadcms/translations": "3.93.0",
+    "@payloadcms/ui": "3.93.0",
+    "@stripe/react-stripe-js": "3.10.0",
+    "@stripe/stripe-js": "4.10.0",
+    "cloudinary": "2.7.0",
+    "cross-env": "7.0.3",
+    "graphql": "16.11.0",
+    "next": "16.4.5",
+    "payload": "3.93.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.5",
+    "stripe": "18.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "typescript": "^5"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24.22.1"
+  }
+}

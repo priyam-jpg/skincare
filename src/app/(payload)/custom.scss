@@ -1,0 +1,7 @@
+/* Admin panel overrides */
+
+// The price input is sized for one-character symbols ($, €); "CHF" needs more room.
+.formattedPrice .formattedPriceInput {
+  padding-left: 3rem;
+  min-width: 8rem;
+}

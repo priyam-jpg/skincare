@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T12:00:00Z",
+  "title": "Design System: Your Brand (White Studio)",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Studio Black", "canonical": "#111111", "tonalRamp": ["#111111", "#262626", "#3a3a3a", "#595959", "#7d7d7d", "#a3a3a3", "#d0d0d0", "#f4f4f2"] },
+      "red": { "role": "secondary", "displayName": "Sale Red", "canonical": "#a3362b", "tonalRamp": ["#2a0f0c", "#4d1a15", "#832a21", "#a3362b", "#c0584c", "#d98a80", "#ecbcb5", "#f8e3e0"] },
+      "green": { "role": "tertiary", "displayName": "Hangul Green", "canonical": "#3f5f3a", "tonalRamp": ["#14200f", "#243820", "#3f5f3a", "#5b7e55", "#7d9c76", "#9db894", "#c3d5bd", "#e3eadc"] },
+      "ground": { "role": "neutral", "displayName": "Pure White", "canonical": "#ffffff", "tonalRamp": ["#d0d0d0", "#dcdcdc", "#e6e6e6", "#eeeeee", "#f4f4f2", "#f8f8f7", "#fcfcfc", "#ffffff"] },
+      "band": { "role": "neutral", "displayName": "Gallery Band", "canonical": "#f4f4f2", "tonalRamp": ["#a8a8a6", "#bdbdbb", "#cfcfcd", "#dedeDC", "#e8e8e6", "#f0f0ee", "#f4f4f2", "#fafaf9"] },
+      "ink-2": { "role": "neutral", "displayName": "Quiet Grey", "canonical": "#595959", "tonalRamp": ["#1f1f1f", "#333333", "#464646", "#595959", "#6f6f6f", "#8a8a8a", "#a8a8a8", "#cccccc"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(17, 17, 17, 0.14)", "tonalRamp": ["rgba(17,17,17,0.5)", "rgba(17,17,17,0.35)", "rgba(17,17,17,0.3)", "rgba(17,17,17,0.14)", "rgba(17,17,17,0.1)", "rgba(17,17,17,0.07)", "rgba(17,17,17,0.04)", "rgba(17,17,17,0.02)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "title": { "displayName": "Title", "purpose": "Product, step and set names." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and secondary copy in grey." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav, tags." },
+      "hangul": { "displayName": "Hangul caption", "purpose": "Green Noto Sans KR gloss on routine steps and ingredient labels." }
+    },
+    "shadows": [
+      { "name": "shadow-1", "value": "0 1px 2px rgba(17,17,17,0.1), 0 2px 8px -2px rgba(17,17,17,0.08)", "purpose": "Product and set cards at rest." },
+      { "name": "card-hover", "value": "0 14px 22px -14px rgba(17,17,17,0.38), var(--shadow-1)", "purpose": "Product card hover with 3px lift." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All transitions; 120 to 300ms." },
+      { "name": "header-solidify", "value": "240ms ease-out background and border", "purpose": "Transparent header turning white on scroll." }
+    ],
+    "breakpoints": [
+      { "name": "cards-split", "value": "560px" },
+      { "name": "hero-split", "value": "700px" },
+      { "name": "sets-2", "value": "800px" },
+      { "name": "desktop-header", "value": "900px" },
+      { "name": "routine-split", "value": "1000px" },
+      { "name": "cards-4", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Black action; the only CTA colour.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Shop bestsellers</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 10px; background: #111111; color: #fff; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: background-color 180ms; } .ds-btn-primary:hover { background: #3a3a3a; } .ds-btn-primary:focus-visible { outline: 2px solid #3f5f3a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action beside the primary.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Build your routine</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 10px; border: 1px solid rgba(17,17,17,0.3); background: transparent; color: #111; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: background-color 180ms, border-color 180ms; } .ds-btn-ghost:hover { background: #f4f4f2; border-color: #3f5f3a; } .ds-btn-ghost:focus-visible { outline: 2px solid #3f5f3a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Sale Tag",
+      "kind": "chip",
+      "refersTo": "tag-sale",
+      "description": "Red tag, the only place red appears besides the bag count.",
+      "html": "<span class=\"ds-tag\">Sale</span>",
+      "css": ".ds-tag { display: inline-block; padding: 4px 9px; border-radius: 3px; background: #a3362b; color: #fff; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "White hairline card with a neutral grey art ground.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card__art\"></div><div class=\"ds-card__body\"><h3 class=\"ds-card__name\">Calming Essence</h3><p class=\"ds-card__meta\">150 ml</p><p class=\"ds-card__price\">$28</p></div></article>",
+      "css": ".ds-card { background: #fff; border: 1px solid rgba(17,17,17,0.14); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(17,17,17,0.1), 0 2px 8px -2px rgba(17,17,17,0.08); transition: transform 300ms, box-shadow 300ms; } .ds-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -14px rgba(17,17,17,0.38); } .ds-card__art { aspect-ratio: 1/1; background: #f4f4f2; } .ds-card__body { display: grid; gap: 6px; padding: 22px 24px 26px; } .ds-card__name { margin: 0; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; color: #111; } .ds-card__meta { margin: 0; font-size: 0.875rem; color: #595959; } .ds-card__price { margin: 14px 0 0; font-size: 1.125rem; font-weight: 600; font-variant-numeric: tabular-nums; color: #111; }"
+    },
+    {
+      "name": "Ingredient Label",
+      "kind": "custom",
+      "refersTo": "hangul",
+      "description": "Green Hangul caption over an English name on white.",
+      "html": "<div class=\"ds-label\"><span class=\"ds-label__ko\">쌀</span><strong class=\"ds-label__en\">Rice</strong><p>Softens and brightens.</p></div>",
+      "css": ".ds-label { display: grid; gap: 8px; padding: 40px 36px 44px; background: #fff; border: 1px solid rgba(17,17,17,0.14); } .ds-label__ko { font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 2.5rem; line-height: 1; font-weight: 500; color: #3f5f3a; } .ds-label__en { margin-top: 8px; font-size: 1.125rem; font-weight: 600; color: #111; } .ds-label p { margin: 0; color: #595959; max-width: 36ch; }"
+    },
+    {
+      "name": "Routine Step",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "Numeral in a margin column, title with green Hangul gloss, hairline below.",
+      "html": "<div class=\"ds-step\"><span class=\"ds-step__n\">1</span><div><h3 class=\"ds-step__title\">Cleanse <span class=\"ds-step__ko\">세안</span></h3><p>Lift the day away.</p></div></div>",
+      "css": ".ds-step { display: grid; grid-template-columns: 56px 1fr; gap: 6px 20px; padding: 36px 0; border-bottom: 1px solid rgba(17,17,17,0.14); } .ds-step__n { font-size: 3rem; line-height: 0.9; font-weight: 500; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: #111; } .ds-step__title { margin: 0; display: flex; align-items: baseline; gap: 10px; font-size: 1.375rem; font-weight: 600; letter-spacing: -0.02em; color: #111; } .ds-step__ko { font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 0.9375rem; font-weight: 500; color: #3f5f3a; } .ds-step p { margin: 4px 0 0; color: #595959; }"
+    },
+    {
+      "name": "Header (solid)",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Header after scroll: white with hairline; transparent over the hero at rest.",
+      "html": "<header class=\"ds-header\"><nav class=\"ds-nav\"><a href=\"#\">Shop</a><a href=\"#\">Routine</a></nav><a class=\"ds-logo\" href=\"#\">Your Brand</a><span></span></header>",
+      "css": ".ds-header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 78px; padding: 10px 32px; background: #fff; border-bottom: 1px solid rgba(17,17,17,0.14); } .ds-nav { display: flex; gap: 28px; } .ds-nav a { padding: 10px 2px; font-size: 0.9375rem; font-weight: 500; color: #111; text-decoration: none; background: linear-gradient(#111,#111) left bottom / 0 1.5px no-repeat; transition: background-size 240ms; } .ds-nav a:hover { background-size: 100% 1.5px; } .ds-nav a:focus-visible { outline: 2px solid #3f5f3a; outline-offset: 3px; } .ds-logo { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: #111; text-decoration: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The White Studio",
+    "overview": "The page is one white field. The announcement bar is black, then the header sits transparent over a white hero whose studio photograph fades at its top and left edges, so header, headline and faces share a single surface. Below, the page alternates white and a barely-grey band (#f4f4f2), separated by hairlines, and ends in a black footer. Colour comes from photography and product art, not from the interface.\n\nDensity is generous and calm: wide section padding, thin rules, tight negative-tracked Google Sans at weight 600 for every heading. Actions are black. Red and green are rationed to single jobs so they stay legible as signals.",
+    "keyCharacteristics": [
+      "White ground, near-black ink, grey secondary text; black bars top and bottom.",
+      "Transparent header that turns solid white with a hairline once scrolled.",
+      "Photo dissolved into the page by mask, never boxed under a nav bar.",
+      "Soft neutral shadows on cards only; everything else is flat with hairlines.",
+      "Numbered routine with a strict margin column as the page's ordered device."
+    ],
+    "rules": [
+      { "name": "The Rationed Signal Rule", "body": "Red is only for sale tags and the bag count; green is only for Hangul captions (plus focus affordances). If a new element wants colour, it takes ink or grey.", "section": "colors" },
+      { "name": "The Black Action Rule", "body": "Primary buttons are black on white and white on the black footer. No coloured CTA.", "section": "colors" },
+      { "name": "The Tabular Price Rule", "body": "Prices and counts use tabular lining numerals at weight 600.", "section": "typography" },
+      { "name": "The Hairline First Rule", "body": "Separate with a 1px hairline or a band change before reaching for a shadow; shadows belong to cards.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the ground #ffffff and use #f4f4f2 only for alternating bands and product-art grounds.",
+      "Do make every primary action black with white text.",
+      "Do let photography dissolve into the white page with a mask rather than a frame.",
+      "Do separate with 1px hairlines (--line) first.",
+      "Do keep Hangul captions in Noto Sans KR, green."
+    ],
+    "donts": [
+      "Don't use red anywhere except sale/new/bestseller tags and the bag count.",
+      "Don't use green for anything beyond Hangul captions and focus/hover affordances.",
+      "Don't reintroduce warm tan, brown, wood-grain or brass surfaces; the earlier drawer-wall world is retired.",
+      "Don't box the hero photo beneath a solid nav bar.",
+      "Don't add heavy or tinted shadows; shadows stay neutral and soft."
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+# Render Blueprint: one web service + one Postgres database, both in Frankfurt (closest region to Switzerland).
+# In Render: New → Blueprint → pick this repo. Fill in the "sync: false" values when prompted.
+databases:
+  - name: skincare-db
+    region: frankfurt
+    plan: basic-256mb
+    databaseName: skincare
+    user: skincare
+
+services:
+  - type: web
+    name: skincare-store
+    runtime: node
+    region: frankfurt
+    plan: starter
+    buildCommand: npm ci && npm run build
+    # Pending database migrations run automatically when the server starts.
+    startCommand: npm run start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: skincare-db
+          property: connectionString
+      - key: PAYLOAD_SECRET
+        generateValue: true
+      - key: NEXT_PUBLIC_SERVER_URL
+        sync: false # e.g. https://www.yourdomain.ch (no trailing slash)
+      - key: NEXT_PUBLIC_BRAND_NAME
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: STRIPE_WEBHOOKS_SIGNING_SECRET
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: CLOUDINARY_FOLDER
+        value: store
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: STORE_NOTIFICATION_EMAIL
+        sync: false
